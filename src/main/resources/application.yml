@@ -1,0 +1,36 @@
+jwt.signing.key.secret : mySecret
+jwt.get.token.uri : /authenticate
+jwt.refresh.token.uri : /refresh
+jwt.http.request.header : Authorization
+jwt.token.expiration.in.seconds : 604800
+############################## 
+#Database connection config
+##############################
+server:
+  port: 8089
+spring:
+  application:
+    name: Media-stream-badwords
+  datasource:
+    url: jdbc:mysql://localhost/badwords
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+
+##############################
+  #Hibernate config
+##############################  
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      ddl-auto:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect    
+    
+    
+    
